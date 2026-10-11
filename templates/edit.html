@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transaction</title>
+    <link rel="stylesheet" href="{% static 'tracker/style.css' %}">
+</head>
+<body>
+
+    <h1 id="main-title">Edit Transaction</h1>
+
+    <div class="form-container">
+
+        <h2>Edit Transaction</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {% for field in form %}
+
+                <label for="{{ field.id_for_label }}">
+                    {{ field.label }}:
+                </label>
+
+                {{ field }}
+
+                {% for error in field.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+
+            {% endfor %}
+
+            <button type="submit">Update Transaction</button>
+
+        </form>
+
+        <p>
+            <a href="{% url 'home' %}">Cancel and return home</a>
+        </p>
+
+    </div>
+
+</body>
+</html>

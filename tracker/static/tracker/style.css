@@ -1,0 +1,517 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background: #f5f7fb;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #15803d;
+    --danger: #dc2626;
+    --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+body {
+    margin: 0;
+    padding: 35px;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text);
+}
+
+#main-title {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+}
+
+.description {
+    margin: 0 0 25px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 16px;
+}
+
+/* =========================
+   AUTHENTICATION BAR
+========================= */
+
+.auth-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0 25px;
+}
+
+.auth-bar p {
+    margin: 0;
+    padding: 0;
+    color: var(--muted);
+}
+
+.auth-bar form {
+    margin: 0;
+}
+
+.auth-bar button {
+    padding: 9px 16px;
+    background: #fee2e2;
+    color: var(--danger);
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-bar button:hover {
+    background: #fecaca;
+}
+
+/* =========================
+   SUCCESS MESSAGES
+========================= */
+
+.success-message {
+    max-width: 700px;
+    margin: 15px auto;
+    padding: 12px 16px;
+    color: var(--success);
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* =========================
+   DASHBOARD SUMMARY CARDS
+========================= */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0;
+}
+
+.container div {
+    min-width: 0;
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.09);
+}
+
+.container .income {
+    color: var(--success);
+    border-top: 4px solid #22c55e;
+}
+
+.container .expense {
+    color: var(--danger);
+    border-top: 4px solid #ef4444;
+}
+
+.container .balance {
+    color: var(--primary);
+    border-top: 4px solid var(--primary);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    font-family: inherit;
+}
+
+.add-button {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 22px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.add-button:hover {
+    background: var(--primary-hover);
+}
+
+/* =========================
+   ADD / EDIT FORMS
+========================= */
+
+.form-container {
+    max-width: 520px;
+    margin: 30px auto;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.form-container h2 {
+    margin: 0 0 22px;
+    text-align: center;
+    font-size: 23px;
+}
+
+.form-container label {
+    display: block;
+    margin: 14px 0 6px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-container input,
+.form-container select {
+    display: block;
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 12px;
+    margin: 0 0 10px;
+    background: white;
+    color: var(--text);
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    outline: 2px solid #bfdbfe;
+    border-color: var(--primary);
+}
+
+.form-container button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: var(--primary-hover);
+}
+
+.form-container a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   FORM ERRORS
+========================= */
+
+.error {
+    margin: 4px 0 10px;
+    padding: 0;
+    color: var(--danger);
+    text-align: left;
+    font-size: 13px;
+}
+
+/* =========================
+   TRANSACTIONS
+========================= */
+
+.transactions-title {
+    margin: 40px 0 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.transaction-card {
+    max-width: 700px;
+    margin: 16px auto;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.transaction-card p {
+    margin: 8px 0;
+    padding: 0;
+    color: var(--text);
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.transaction-card a {
+    text-decoration: none;
+}
+
+.transaction-card button {
+    margin: 12px 8px 0 0;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.transaction-card a button {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.transaction-card a button:hover {
+    background: #bfdbfe;
+}
+
+.transaction-card form {
+    display: inline-block;
+    margin: 0;
+}
+
+.transaction-card form button {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.transaction-card form button:hover {
+    background: #fecaca;
+}
+
+/* =========================
+   SEARCH AND FILTER
+========================= */
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 750px;
+    margin: 20px auto 25px;
+}
+
+.search-form input,
+.search-form select {
+    min-width: 0;
+    min-height: 43px;
+    padding: 10px 12px;
+    background: white;
+    color: var(--text);
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.search-form input {
+    flex: 2 1 220px;
+}
+
+.search-form select {
+    flex: 1 1 155px;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+    outline: 2px solid #bfdbfe;
+    border-color: var(--primary);
+}
+
+.search-form button,
+.search-form a {
+    display: inline-block;
+    padding: 11px 17px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search-form button {
+    background: var(--primary);
+    color: white;
+}
+
+.search-form button:hover {
+    background: var(--primary-hover);
+}
+
+.search-form a {
+    background: #e2e8f0;
+    color: var(--text);
+}
+
+.search-form a:hover {
+    background: #cbd5e1;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 30px auto;
+}
+
+.pagination a {
+    padding: 9px 15px;
+    background: var(--primary);
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.pagination a:hover {
+    background: var(--primary-hover);
+}
+
+.pagination span {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+    body {
+        padding: 18px;
+    }
+
+    #main-title {
+        font-size: 28px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .container div {
+        padding: 20px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-form input,
+    .search-form select,
+    .search-form button,
+    .search-form a {
+        width: 100%;
+    }
+
+    .transaction-card {
+        padding: 16px;
+    }
+
+    .auth-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* Charts Layout */
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* Individual Chart Cards */
+.chart-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    min-width: 0;
+}
+
+.chart-card h2 {
+    font-size: 20px;
+    color: #1f2937;
+    margin: 0 0 20px;
+}
+
+.chart-card canvas {
+    max-height: 320px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 700px) {
+    .charts-container {
+        grid-template-columns: 1fr;
+        margin: 20px auto;
+        gap: 18px;
+    }
+
+    .chart-card {
+        padding: 18px;
+    }
+}
